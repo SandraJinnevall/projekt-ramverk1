@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.com/SandraJinnevall/projekt-ramverk1.svg?branch=main)](https://travis-ci.com/SandraJinnevall/projekt-ramverk1)
 [![CircleCI](https://circleci.com/gh/SandraJinnevall/projekt-ramverk1.svg?style=svg)](https://app.circleci.com/pipelines/github/SandraJinnevall/projekt-ramverk1)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SandraJinnevall/projekt-ramverk1/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/SandraJinnevall/projekt-ramverk1/?branch=main)
+
 Checka ut och installera din egna version.
 ===================================
 
