@@ -1,0 +1,304 @@
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+
+/** ==============================================================
+ * Horisontal grid setup 
+ */
+.inner-wrap {
+    #desinax-vgrid.grid(1100px);
+
+    &.inner-wrap-header {
+        #desinax-vgrid.grid(100%);
+    }
+}
+
+.row {
+    #desinax-vgrid.row();
+}
+
+
+
+/** ==============================================================
+ * Header 
+ */
+/*
+.site-header {
+
+}*/
+
+@colorAccentHeader1:  #3B440D;
+@colorAccentHeader2:  #9FB129;
+@fontFamilySiteLogo:  @fontFamilyTimesNewRoman;
+
+// .logo-1 {
+//     top: 55px;
+//     left: 0;
+// }
+//
+
+// .site-logo-text {
+//     font-family: @fontFamilySiteLogo;
+// }
+
+.profile {
+     text-align: right;
+
+     .profile-phpbb {
+         font-size: 2em;
+         line-height: 0;
+         position: absolute;
+         top: 21px;
+         right: 60px;
+     }
+
+    .ucp,
+    .login {
+        a {
+            color: @colorAccentHeader1;
+
+            &:hover {
+                color: @colorAccentHeader2;
+            }
+        }
+
+        .icon {
+            position: relative;
+            top: -12px;
+        }
+    }
+
+    .gravatar {
+        img {
+            border-radius: 50%;
+            vertical-align: -8px;
+        }
+
+        a:hover img {
+            opacity: 0.7;
+        }
+    }
+
+    .logout {
+        display: none;
+    }
+
+    .login {
+        .text {
+            display: none;
+        }
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ * Navbar(s)
+ */
+@import "layout/responsive-menu.less";
+
+.region-navbar {
+    #desinax-vgrid.column(@columns);
+}
+
+/*
+.navbar2 {
+
+}
+*/
+
+
+
+/** --------------------------------------------------------------
+ * Breadcrumb
+ */
+.region-breadcrumb {
+    #desinax-vgrid.column(@columns);
+}
+
+
+
+/** --------------------------------------------------------------
+ * Flash area
+ */
+.region-flash {
+    #desinax-vgrid.column(@columns);
+}
+
+
+
+/** --------------------------------------------------------------
+* Columns above and below main
+*/
+.region-columns-above,
+.region-columns-below {
+
+}
+
+
+
+/** --------------------------------------------------------------
+ * General column elements.
+ */
+.columns {
+    //.clearfix();
+    //overflow: auto;
+}
+
+.col2 {
+    #desinax-vgrid.column(@columns / 2);
+}
+
+.col3 {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.col4 {
+    #desinax-vgrid.column(@columns / 4);
+}
+
+.column {
+    height: 100%;
+}
+
+.columns {
+    .clearfix();
+}
+
+
+
+/** ==============================================================
+ * The main content area.
+ *
+ */
+/*
+.outer-wrap-main {
+
+}
+
+.inner-wrap-main {
+
+}*/
+
+.main, // @TODO remove when using new layout from Anax.
+.region-main {
+    #desinax-vgrid.column(@columns * 3 / 4);
+    #desinax-vgrid.push(2);
+
+    &.has-sidebar-left {
+        #desinax-vgrid.column(@columns * 3 / 4 - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    &.has-sidebar-right {
+        #desinax-vgrid.column(@columns * 3 / 4 - 2);
+        #desinax-vgrid.push(0);
+    }
+
+    &.has-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(@columns * 2 / 4);
+        #desinax-vgrid.push(0);
+    }
+}
+
+// @TODO remove .sidebar-right .sidebar-left when using new layout from Anax.
+.sidebar-right,
+.sidebar-left,
+.region-sidebar-right,
+.region-sidebar-left {
+    #desinax-vgrid.column(@columns / 4 + 1);
+}
+
+// @TODO remove .sidebar-right .sidebar-left when using new layout from Anax.
+.sidebar-right,
+.region-sidebar-right {
+    #desinax-vgrid.push(1);
+}
+
+.region-sidebar-left.has-sidebar-right,
+.region-sidebar-right.has-sidebar-left {
+    #desinax-vgrid.column(@columns / 4);
+    #desinax-vgrid.push(0);
+}
+
+@media screen and (max-width: 650px) {
+
+    .main, // @TODO remove when using new layout from Anax.
+    .region-main {
+        min-height: initial;
+        
+        #desinax-vgrid.column(@columns);
+        #desinax-vgrid.push(0);
+
+        &.has-sidebar-left {
+            #desinax-vgrid.column(@columns);
+            #desinax-vgrid.push(0);
+        }
+
+        &.has-sidebar-right {
+            #desinax-vgrid.column(@columns);
+            #desinax-vgrid.push(0);
+        }
+
+        &.has-sidebar-left.has-sidebar-right {
+            #desinax-vgrid.column(@columns);
+            #desinax-vgrid.push(0);
+        }
+    }
+
+    // @TODO remove .sidebar-right .sidebar-left when using new layout from Anax.
+    .sidebar-right,
+    .sidebar-left,
+    .region-sidebar-right,
+    .region-sidebar-left {
+        #desinax-vgrid.column(@columns);
+        #desinax-vgrid.push(0);
+    }
+
+    .col3 {
+        #desinax-vgrid.column(@columns);
+    }
+
+    .col4 {
+        #desinax-vgrid.column(@columns / 2);
+    }
+}
+
+
+
+/** ==============================================================
+ * Sidebar.
+ *
+ */
+.wrap-sidebar .block {
+    margin-bottom: @magicNumber * 2;
+}
+
+
+
+/** ==============================================================
+ * The footer area.
+ *
+ */
+.region-footer {
+    #desinax-vgrid.column(@columns);
+}
+
+
+
+/** --------------------------------------------------------------
+ * The footer column area.
+ */
+.footer-column-wrapper {
+    .clearfix();
+}
+
+.footer-column {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.footer-column,
+.footer-column-x {
+    height: 100%;
+}

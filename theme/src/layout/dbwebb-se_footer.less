@@ -1,0 +1,105 @@
+/**
+ * A footer style for dbwebb.se.
+ */
+@bgColorFooter: @bgColorHtml;
+@colorFooterWrapper: #ddd;
+@colorFooter: #aaa;
+@borderFooter: #777;
+@borderColor: #666;
+
+.outer-wrap-footer {
+    background-color: @bgColorFooter;
+    padding-top: @magicNumber;
+    padding-bottom: @magicNumber * 2;
+}
+
+.footer-column-wrapper {
+    color: @colorFooterWrapper;
+    border-bottom: 1px solid @borderColor;
+    padding-bottom: @magicNumber;
+    margin-bottom: @magicNumber * 2;
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+.footer-column-x {
+    padding-bottom: @magicNumber;
+    padding-right: 1em;
+}
+
+.footer-column-1,
+.footer-column-2 {
+    border-right: 1px solid @borderColor;
+}
+
+.footer-column-2,
+.footer-column-3 {
+    padding-left: 1em;
+}
+
+.site-footer {
+    color: @colorFooter;
+    text-align: center;
+    padding-bottom: @magicNumber;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display: inline-block;
+        
+        &::after {
+            content: " • ";
+        }
+
+        &:last-child::after {
+            content: none;
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .footer-column-wrapper,
+    .footer-column-x {
+        padding-right: 0;
+    }
+
+    .footer-column, {
+        #desinax-vgrid.column(@columns);
+    }
+
+    .footer-column-x {
+        h4 {
+            border-bottom: 1px solid #999;
+        }
+    }
+
+    .footer-column-1,
+    .footer-column-2 {
+        border-right: none;
+    }
+
+    .footer-column-2,
+    .footer-column-3 {
+        padding-left: 0;
+    }
+
+    .fa-4x {
+        font-size: 2em;
+    }
+}

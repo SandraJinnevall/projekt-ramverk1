@@ -1,0 +1,82 @@
+/**
+ * A header style for dbwebb.se.
+ */
+@bgColorHeader: #323232;
+@colorHeader: #ffffff;
+@bgColorHeaderBorder: #666;
+
+.outer-wrap-header {
+    height: @magicNumber * 2;
+    margin-bottom: @magicNumber / 2;
+
+    img {
+        outline: 0;
+    }
+ }
+
+.inner-wrap-header {
+    max-width: none;
+
+    .row {
+        max-width: 100%;
+    }
+}
+
+// @TODO .site-logo-text should be removed when using updated Anax layout.
+// @TODO .navbar2 should be removed when using updated Anax layout.
+// @TODO .profile should be removed when using updated Anax layout.
+.site-logo-text,
+.region-header-col-1 {
+    #desinax-vgrid .column(5);
+}
+
+.navbar2,
+.region-header-col-2 {
+    #desinax-vgrid .column(14);
+}
+
+.profile,
+.region-header-col-3 {
+    #desinax-vgrid .column(5);
+}
+
+@media screen and (max-width: 1300px) {
+    .navbar2,
+    .region-header-col-2 {
+        #desinax-vgrid .column(17);
+    }
+
+    .profile,
+    .region-header-col-3 {
+        #desinax-vgrid .column(2);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .site-logo-text,
+    .region-header-col-1 {
+        #desinax-vgrid .column(6);
+    }
+
+    .navbar2,
+    .region-header-col-2 {
+        #desinax-vgrid .column(16);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .site-logo-text,
+    .region-header-col-1 {
+        #desinax-vgrid .column(16);
+    }
+
+    .navbar2,
+    .region-header-col-2 {
+        display: none;
+    }
+
+    .profile,
+    .region-header-col-3 {
+        #desinax-vgrid .column(8);
+    }
+}

@@ -1,0 +1,218 @@
+/** --------------------------------------------------------------
+ * Make your own custom style.
+ *
+ */
+
+/** ==============================================================
+ * Base
+ */
+@colorAccentHeader1:  #3B440D;
+@colorAccentHeader2:  #9FB129;
+@colorAccentHeader3:  #d5e283;
+
+
+.linkAccent() {
+    a {
+        display: block;
+        text-decoration: none;
+        transition: all 0.6s linear;
+    }
+
+    a:hover {
+        color: @colorAccentHeader1;
+        text-shadow: 0px 0px 1px @colorAccentHeader2;
+        text-decoration: underline;
+    }
+}
+
+
+
+/** ==============================================================
+ * Header 
+ */
+@import "layout/dbwebb-se_header_v2.less";
+
+
+
+/** --------------------------------------------------------------
+* Logo and logo text (PERHAPS MOVE TO OWN MODULE/LAYOUT FILE)
+*/
+.site-logo-text {
+    font-size: 42px;
+    line-height: 1;
+    text-shadow: 2px -2px 2px #ccc;
+    //padding-left: 8px;
+
+    a {
+        color: #333;
+        text-decoration: none;
+        transition: all 0.2s linear;
+
+        &:hover {
+            color: @colorAccentHeader1;
+            text-shadow: 2px -2px 2px @colorAccentHeader2;
+        }
+    }
+}
+
+.site-logo-text-icon {
+    img {
+        vertical-align: bottom;
+        display: none;
+    }
+}
+
+.logo-1 {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+// MOVE TO SPECIFIC
+@media screen and (max-width: 1750px) {
+    .logo-1, // @TODO Remove when movin to new Anax layout
+    .site-logo img {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .logo-1, // @TODO Remove when movin to new Anax layout
+    .site-logo img {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .logo-1, // @TODO Remove when movin to new Anax layout
+    .site-logo img {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .site-logo-text-icon img {
+        display: inline;
+    }
+
+    .logo-1, // @TODO Remove when movin to new Anax layout
+    .site-logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .outer-wrap,
+    .inner-wrap-footer {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    .outer-wrap-flash,
+    .outer-wrap-footer {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .outer-wrap-flash {
+        .row {
+            max-width: 100%;
+        }
+    }
+
+    .footer {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+.outer-wrap-after-main {
+    margin-top: -2 * @magicNumber;
+}
+
+
+
+/** ==============================================================
+ * Column above and below
+ *
+ */
+.inner-wrap-columns-above {
+    margin-bottom: @magicNumber;
+}
+
+
+
+/** ==============================================================
+ * Main
+ *
+ */
+.inner-wrap-main {
+    padding-bottom: @magicNumber * 2;
+}
+
+
+
+/** ==============================================================
+ * Article and Sidebar blocks
+ *
+ */
+// @header1BorderColor: #666;
+// @header2BorderColor: #ccc;
+
+@blockBorderColor: #ccc;
+@blockBgColor: #eee;
+@blockGradientColorStart: #fff;
+@blockGradientColorEnd: #ccc;
+
+.article {
+    margin-bottom: @magicNumber * 3;
+ }
+
+.article,
+.sidebar,
+.columns-above,
+.columns-below {
+     .block {
+         margin-bottom: @magicNumber * 2;
+
+         h4 {
+             border-top: 1px solid @blockBorderColor;
+             background-color: @blockBgColor;
+             #gradient .horizontal(@blockGradientColorStart, @blockGradientColorEnd);
+             .anchorAnonymous();
+             .linkAccent();
+         }
+     }
+ }
+
+
+
+/** ==============================================================
+ * The footer column area.
+ *
+ */
+ @import "layout/dbwebb-se_footer.less";
+
+
+
+/** ==============================================================
+ * Route specific style.
+ */
+.route- {
+    .outer-wrap-flash {
+        margin-bottom: @magicNumber;
+    }
+
+    .article {
+        margin-bottom: 0;
+    }
+}
+
+.route-kurser,
+.route-material,
+.route-utbildning,
+.route-community {
+    .outer-wrap-main {
+        display: none;
+    }
+}

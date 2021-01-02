@@ -1,0 +1,118 @@
+/**
+ * A responsive menu.
+ */
+@import "@desinax/responsive-menu/less/responsive-menu.less";
+@import "@desinax/responsive-menu/less/media-queries.less";
+
+@maxButtonFontSize: 2em;
+@navbarFontFamily: @fontFamilyTimesNewRoman;
+
+// @TODO This shoud not be needed to specify like this?
+.rm-max .rm-mobile .rm-submenu-button {
+    padding: 1em;
+}
+
+.rm-max {
+    &.rm-navbar {
+        top: 6px;
+    }
+}
+
+// Older to clean up?
+.rm-navbar-top {
+    text-align: center;
+
+    &.rm-navbar {
+        font-family: @navbarFontFamily;
+        line-height: 1;
+        font-size: 22px;
+        top: 10px;
+    }
+
+    .rm-desktop {
+
+        a {
+            color: #333;
+            padding: 0 30px;
+            text-decoration: none;
+            transition: all 0.6s linear;
+        }
+
+        li:first-child a {
+            padding-left: 0;
+        }
+
+        li:last-child a {
+            padding-right: 0;
+        }
+
+        li.selected a,
+        a:hover {
+            color: @colorAccentHeader1;
+            text-shadow: 0px 0px 1px @colorAccentHeader2;
+            text-decoration: underline;
+        }
+
+        li.selected a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1400px) {
+        .rm-desktop {
+            a {
+                padding: 0 20px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .rm-desktop {
+            a {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .rm-desktop {
+            .icon {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+.rm-navbar-max {
+    //font-size: 1em;
+
+    &.rm-navbar {
+        display: inline-block;
+    }
+
+    .rm-button {
+        position: relative;
+        top: 3px;
+        font-size: 1.5em;
+        //line-height: 0;
+    }
+
+    .rm-mobile {
+        background-color: #444;
+        text-align: left;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                background-color: #555;
+            }
+        }
+    }
+}

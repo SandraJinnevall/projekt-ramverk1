@@ -1,0 +1,7 @@
+O:8:"stdClass":7:{s:4:"file";s:21:"block/footer-col-2.md";s:7:"section";s:0:"";s:5:"level";i:0;s:8:"internal";b:1;s:7:"tocable";b:0;s:5:"views";a:1:{s:4:"main";a:2:{s:8:"template";s:23:"anax/v2/article/default";s:4:"data";a:2:{s:7:"content";s:139:"<h4>Footer col 2</h4>
+
+<p>Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.</p>
+";s:7:"excerpt";s:139:"<h4>Footer col 2</h4>
+
+<p>Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.</p>
+";}}}s:11:"frontmatter";a:1:{s:5:"title";s:12:"Footer col 2";}}

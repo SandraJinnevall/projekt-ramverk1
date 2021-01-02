@@ -1,0 +1,32 @@
+/**
+ * Base style to affect HTML elements on a general scale.
+ */
+@bgColorHtml: #424242;
+@bgColorBody: #fff;
+@colorBody: #333;
+@baseFontSize: 100.01%;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;  // Always show scrollbar to avoid flickr
+    background-color: @bgColorHtml;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: @colorBody;
+    background-color: @bgColorBody;
+    #desinax-hgrid.font(@fontSizeBody);
+}
+
+// Affects all basic typographic elements
+#desinax-hgrid.activateDefaultTypography();
+
+// Responsive images
+img {
+    max-width: 100%;
+}

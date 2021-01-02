@@ -1,0 +1,249 @@
+/*!
+ * Stylesheet to be the next version of the stylesheet for dbwebb.se.
+ *
+ * This stylesheet is a look-a-like the dbwebb.se stylesheet and it is
+ * special for the design course. The style is used to show off various
+ * constructions of the website to show how they could be styled.
+ */
+
+/**
+ * Normalize and reset the style.
+ */
+@import "normalize.css/normalize.less";
+
+
+
+/**
+ * Font Awesome.
+ */
+@import "@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "@fortawesome/fontawesome-free/less/solid.less";
+@import "@fortawesome/fontawesome-free/less/brands.less";
+
+
+
+/**
+ * Mixins within the namespace #desinax-mixin.
+ * @TODO clean up what mixins are used
+ */
+@import "@desinax/mixin/less/clearfix.less";
+@import "@desinax/mixin/less/mixins.less";
+@import "@desinax/mixin/less/css3mixins.less";
+
+.clearfix() {
+    #desinax-mixin.clearfix();
+}
+
+
+
+/**
+ * Desinax general modules, namespace #desinax-general. (You must enable
+ * the style you want and add layout.)
+ * @TODO check and clean up, add namespace.
+ */
+@import "@desinax/general/less/byline.less";
+@import "@desinax/general/less/gallery.less";
+@import "@desinax/general/less/highlightjs-default.less";
+@import "@desinax/general/less/image-overlay.less";
+@import "@desinax/general/less/notice.less";
+@import "@desinax/general/less/revision.less";
+
+
+
+/**
+ * Vertical grid
+ */
+@import "@desinax/vertical-grid/less/grid.less";
+
+html.vgrid .inner-wrap {
+    @gridImage: "../img/theme/grid_@{columns}x@{columnWidth}x@{gutterWidth}-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1100px);
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}
+
+
+
+/**
+ * Typographic grid in namespace #desinax-hgrid.
+ */
+@import "@desinax/typographic-grid/less/typography-font-families.less";
+@import "@desinax/typographic-grid/less/typography-defaults.less";
+
+html.hgrid .inner-wrap {
+    #desinax-hgrid.showGridAlt();
+}
+
+
+
+/**
+ * Figure and figcaption mixins, namespace #desinax-figure. You must enable
+ * the style you want and add layout.
+ */
+@import "@desinax/figure/less/asciinema.less";
+@import "@desinax/figure/less/figure.less";
+@import "@desinax/figure/less/codepen.less";
+
+// Enable style from the module and add layout
+figure.figure {
+    #desinax-figure.figure(1100px);
+}
+
+figure.asciinema {
+    &:extend(figure.figure);
+    #desinax-figure.asciinema();
+}
+
+figure.figure-codepen, // @TODO remove this?
+figure.codepen {
+    &:extend(figure.figure);
+    #desinax-figure.codepen();
+}
+
+// @TODO remove this?
+img.responsive {
+    max-width: 100%;
+}
+
+
+
+/**
+ * Links and navigation
+ * @TODO check and clean up
+ */
+
+// Cleanup theses
+@anchorColor:         #33b;
+@anchorColor2:        #448;
+@anchorColorHover:    #33f;
+@anchorColorActive:   #838;
+@anchorColorVisited:  #838;
+
+@anchorColorAnonymous:      @colorBody;
+@anchorColorAnonymousHover: #00c;
+
+@anchorTabBgColor:          lighten(@anchorColorHover, 35%);
+@anchorTabBgColorHover:     lighten(@anchorColorHover, 30%);
+@anchorTabBgColorActive:    lighten(@anchorColorHover, 35%);
+@anchorTabBgColorSelected:  @bgColorBody;
+
+
+@import "@desinax/link/less/anchor-header.less";
+@import "@desinax/link/less/breadcrumb.less";
+//@import "@desinax/link/less/links-extra-dbwebb.less";
+@import "@desinax/link/less/list.less";
+@import "@desinax/link/less/next-previous.less";
+@import "@desinax/link/less/toc.less";
+
+//  breadcrumb.less
+.breadcrumb-list,
+.bullet-list {
+    margin-bottom: @magicNumber;
+    #desinax-hgrid.fontSize(@fontSizeSmall);
+    li {
+        .anchorAnonymous();
+    }
+}
+
+// Killed file links.less
+.anchor(@anchorColor, @anchorColorHover, @anchorColorVisited);
+
+.footer {
+  .anchor(@anchorColor2)
+}
+
+.fab.fa-icon:hover {
+    color: green;
+}
+
+
+
+/**
+ * Use internal modules
+ * @TODO check and clean up and explain what this style does.
+ */
+@import "modules/blog.less";
+@import "modules/forms.less";
+@import "modules/linkedin.less";
+//@import "modules/variables.less"; // OBSOLETE
+
+
+
+/**
+ * Base style to affect HTML elements on a general scale.
+ */
+@import "base/base.less";
+
+
+
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+@import "layout/layout_v2.less";
+@import "layout/dbwebb-se_v2.less"; // Rearrange and move classic style to layout.less
+@import "layout/regions.less";
+
+
+
+.site-logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.site-logo-text {
+    font-family: @fontFamilySiteLogo;
+    padding-left: 0.2em;
+}
+
+.rm-navbar {
+    text-align: center;
+    font-family: @fontFamilyCambria;
+    font-size: 1.5em;
+    line-height: 0;
+}
+
+.rm-menu-button {
+    font-size: 1.5em;
+}
+
+.rm-desktop li ul {
+    background-color: #fff;
+}
+
+.wrap-sidebar .block h4 {
+    border-top: 1px solid #ccc;
+    background-image: linear-gradient(to right, #fff, #ccc);
+}
+
+
+
+/**
+ * My settings.
+ */
+@bgColorHtml: #424242;
+@bgColorBody: #fff;
+@colorBody:   #111;
+
+@fontFamilyHeadings: @fontFamilyCambria;
+@fontFamilyBody:     @fontFamilyVerdana;
+@fontFamilyCode:     @fontFamilyCourier;
+
+@colorH1BorderBottom: #666; // Add to h4 also
+@colorH2BorderBottom: #ccc;
+@colorH3BorderBottom: #eee;
+@colorH4BorderBottom: #eee;
+
+@magicNumber:  24px;
+@fontSizeBody: 16px;
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+@gridType:      "float"; // "flex"
+
+@navbarFontFamily: @fontFamilyTimesNewRoman;

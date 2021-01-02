@@ -1,0 +1,276 @@
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+
+/** ==============================================================
+ * Horisontal grid setup 
+ */
+.inner-wrap {
+    #desinax-vgrid.grid(1100px);
+
+    &.inner-wrap-header {
+        #desinax-vgrid.grid(100%);
+    }
+}
+
+.row {
+    #desinax-vgrid.row();
+}
+
+
+
+/** ==============================================================
+ * Header 
+ */
+/*
+.site-header {
+
+}*/
+
+@colorAccentHeader1:  #3B440D;
+@colorAccentHeader2:  #9FB129;
+@fontFamilySiteLogo:  @fontFamilyTimesNewRoman;
+
+.logo-1 {
+    top: 55px;
+    left: 0;
+}
+
+.site-logo-text {
+    font-family: @fontFamilySiteLogo;
+}
+
+.profile {
+     text-align: right;
+
+     .profile-phpbb {
+         font-size: 2em;
+         line-height: 0;
+         position: absolute;
+         top: 21px;
+         right: 60px;
+     }
+
+    .ucp,
+    .login {
+        a {
+            color: @colorAccentHeader1;
+
+            &:hover {
+                color: @colorAccentHeader2;
+            }
+        }
+
+        .icon {
+            position: relative;
+            top: -12px;
+        }
+    }
+
+    .gravatar {
+        img {
+            border-radius: 50%;
+            vertical-align: -8px;
+        }
+
+        a:hover img {
+            opacity: 0.7;
+        }
+    }
+
+    .logout {
+        display: none;
+    }
+
+    .login {
+        .text {
+            display: none;
+        }
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ * Navbar(s)
+ */
+@import "layout/responsive-menu.less";
+
+/*
+.navbar1 {
+    #desinax-vgrid.column(@columns);
+}
+
+.navbar2 {
+
+}
+*/
+
+
+
+/** --------------------------------------------------------------
+ * Breadcrumb
+ */
+.breadcrumb-wrap {
+    #desinax-vgrid.column(@columns);
+}
+
+
+
+/** --------------------------------------------------------------
+ * Flash area
+ */
+.flash-wrap {
+    #desinax-vgrid.column(@columns);
+}
+
+
+
+/** --------------------------------------------------------------
+* Columns above and below main
+*/
+#desinax-vgrid.columns-above,
+#desinax-vgrid.columns-below {
+
+}
+
+
+
+/** --------------------------------------------------------------
+ * General column elements.
+ */
+#desinax-vgrid.columns {
+    //.clearfix();
+    //overflow: auto;
+}
+
+.col2 {
+    #desinax-vgrid.column(@columns / 2);
+}
+
+.col3 {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.col4 {
+    #desinax-vgrid.column(@columns / 4);
+}
+
+#desinax-vgrid.column {
+    height: 100%;
+}
+
+.columns {
+    .clearfix();
+}
+
+
+
+/** ==============================================================
+ * The main content area.
+ *
+ */
+/*
+.outer-wrap-main {
+
+}
+
+.inner-wrap-main {
+
+}*/
+
+.main {
+    #desinax-vgrid.column(@columns * 3 / 4 - 2);
+    #desinax-vgrid.push(2);
+
+    &.has-sidebar-left {
+        #desinax-vgrid.column(@columns * 3 / 4 - 2);
+        #desinax-vgrid.push(1);
+    }
+
+    &.has-sidebar-right {
+        #desinax-vgrid.column(@columns * 3 / 4 - 2);
+        #desinax-vgrid.push(0);
+    }
+
+    &.has-sidebar-left.has-sidebar-right {
+        #desinax-vgrid.column(@columns * 2 / 4 + 2);
+        #desinax-vgrid.push(0);
+    }
+}
+
+.sidebar-right,
+.sidebar-left {
+    #desinax-vgrid.column(@columns / 4 + 1);
+}
+
+.sidebar-right {
+    #desinax-vgrid.push(1);
+}
+
+@media screen and (max-width: 650px) {
+
+    .main {
+        min-height: initial;
+        
+        #desinax-vgrid.column(@columns);
+        #desinax-vgrid.push(0);
+
+        &.has-sidebar-left {
+            #desinax-vgrid.column(@columns);
+            #desinax-vgrid.push(0);
+        }
+
+        &.has-sidebar-right {
+            #desinax-vgrid.column(@columns);
+            #desinax-vgrid.push(0);
+        }
+
+        &.has-sidebar-left.has-sidebar-right {
+            #desinax-vgrid.column(@columns);
+            #desinax-vgrid.push(0);
+        }
+    }
+
+    .sidebar-right,
+    .sidebar-left {
+        display: none;
+    }
+
+    .col3 {
+        #desinax-vgrid.column(@columns);
+    }
+
+    .col4 {
+        #desinax-vgrid.column(@columns / 2);
+    }
+}
+
+
+
+/** ==============================================================
+ * The footer area.
+ *
+ */
+.site-footer {
+    #desinax-vgrid.column(@columns);
+}
+
+
+
+/** --------------------------------------------------------------
+ * The footer column area.
+ */
+.footer-column-wrapper {
+    .clearfix();
+}
+
+.footer-column {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.footer-column,
+.footer-column-x {
+    height: 100%;
+}

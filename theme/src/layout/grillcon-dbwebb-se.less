@@ -1,0 +1,267 @@
+/** --------------------------------------------------------------
+ * Make your own custom style.
+ *
+ */
+@colorAccentHeader1:  #ff0000;
+@colorAccentHeader2:  #ff4600;
+@colorAccentHeader3:  #ff3f00;
+
+@anchorColor:         #ff0000;
+@anchorColor2:        #ff0000;
+@anchorColorHover:    #ff4600;
+@anchorColorActive:   #ff4600;
+@anchorColorVisited:  #ff3f00;
+
+
+
+/** ==============================================================
+ * Header 
+ */
+@import "layout/dbwebb-se_header.less";
+
+
+
+/** --------------------------------------------------------------
+ * Logo and logo text (PERHAPS MOVE TO OWN MODULE/LAYOUT FILE)
+ */
+ .logo-1 {
+     position: absolute;
+     top: 58px;
+     left: 10px;
+ }
+
+ // .site-logo-text {
+ //     font-family: @fontFamilyMonospace;
+ // }
+
+ .site-logo-text-icon {
+     img {
+         vertical-align: bottom;
+     }
+ }
+
+.site-logo-text {
+    font-size: 42px;
+    line-height: 1;
+    text-shadow: 2px -2px 2px #ccc;
+    padding-left: 8px;
+
+    a {
+        color: #333;
+        text-decoration: none;
+        transition: all 0.2s linear;
+
+        &:hover {
+            color: @colorAccentHeader1;
+            text-shadow: 2px -2px 2px @colorAccentHeader2;
+        }
+    }
+}
+
+.site-logo-text-icon {
+    img {
+        vertical-align: bottom;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+      .site-logo-text-icon img {
+          display: none;
+      }
+}
+
+// MOVE TO SPECIFIC
+@media screen and (max-width: 1360px) {
+    .site-logo-text-icon img {
+        display: inline;
+    }
+
+    .logo-1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .outer-wrap,
+    .inner-wrap-footer {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    .outer-wrap-flash,
+    .outer-wrap-footer {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .outer-wrap-flash {
+        .row {
+            max-width: 100%;
+        }
+    }
+
+    .footer {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+.outer-wrap-after-main {
+    margin-top: -2 * @magicNumber;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Navbar
+ */
+// Navbar
+//@navbarItemColor:        darken(#487FA6, 30%); 
+//@navbarItemHoverColor:   #487FA6;
+//@navbarItemHoverBgColor: lighten(#487FA6, 50%);
+
+// Dropdown
+//@submenuBgColor:         lighten(#487FA6, 40%);
+//@submenuItemBorderColor: #487FA6;
+
+// .rm-navbar {
+//     font-family: @fontFamilyMonospace;
+// }
+// 
+// .rm-desktop {
+//     text-align: center;
+// 
+//     li {
+//         min-width: 6em;
+//         font-size: 20px;
+//         text-align: center;
+// 
+//         li:first-child a {
+//             padding-left: 0;
+//         }
+// 
+//         li:last-child a {
+//             padding-right: 0;
+//         }
+// 
+//         &.selected a,
+//         a:hover {
+//             color: @colorAccentHeader1;
+//             text-shadow: 0px 0px 1px @colorAccentHeader2;
+//             text-decoration: underline;
+//         }
+//     }
+// }
+// 
+// .rm-max {
+//     text-align: left;
+// }
+
+// // Max
+// //@maxBgColor:                darken(#487FA6, 20%);
+// //@maxMenuItemClickedBgColor: darken(#487FA6, 30%);
+// @maxButtonFontSize:         2em;
+// //@maxButtonColor:            @maxMenuItemClickedBgColor;
+// @maxButtonClickedColor:     @colorAccentHeader1;
+// //@maxButtonSubmenuBgColor:    darken(#487FA6, 25%);
+// //@maxButtonSubmenuHoverBgColor: darken(#487FA6, 15%);
+
+
+
+/** --------------------------------------------------------------
+ * Article and Sidebar blocks
+ *
+ */
+ @header1BorderColor: #ff8000;
+ @headerBorderColor: #ff8000;
+
+ @blockBorderColor: #ffaf00;
+ @blockBgColor: #ffff00;
+ @blockGradientColorStart: #fff;
+ @blockGradientColorEnd: #ffff00;
+
+.sidebar,
+.columns-above {
+    .block {
+        h4 {
+            padding: 0.5em 0 0.5em 0.5em;
+        }
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ * The footer column area.
+ */
+@import "layout/dbwebb-se_footer.less";
+
+
+
+/** --------------------------------------------------------------
+ * Media queries
+ *
+ */
+@media screen and (max-width: 1650px) {
+    .logo-1 {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .logo-1 {
+        width: 100px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .site-logo-text {
+        #desinax-vgrid .column(6);
+    }
+
+    .navbar2 {
+        #desinax-vgrid .column(16);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .site-logo-text {
+        #desinax-vgrid .column(8);
+    }
+
+    .navbar2 {
+        #desinax-vgrid .column(12);
+    }
+
+    .rm-desktop {
+        li {
+            min-width: auto;
+
+            a {
+                padding: 0.5em;
+            }
+
+            &:first-child a {
+                padding-left: 0;
+            }
+
+            &:last-child a {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+/*
+@media screen and (max-width: 960px) {
+    .site-logo-text {
+        #desinax-vgrid .column(8);
+    }
+}
+*/
+@media screen and (max-width: 680px) {
+    .site-logo-text {
+        #desinax-vgrid .column(20);
+    }
+}

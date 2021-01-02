@@ -1,0 +1,5 @@
+Create a me-site for the ramverk1 course.
+
+Standard installation of Anax Flat+ (latest version),
+adapting for the ramverk1 course me page requirements,
+including themes.
