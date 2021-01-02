@@ -1,7 +1,7 @@
 <?php
-
-global $di;
-$loggedIn = $di->get("session")->get("loggedin");
+/**
+ * Supply the basis for the navbar as an array.
+ */
 return [
     // Use for styling the menu
     "class" => "my-navbar",
@@ -9,51 +9,29 @@ return [
     // Here comes the menu items/structure
     "items" => [
         [
-            "text" => "Start",
-            "url" => "../htdocs/",
-            "title" => "QandA",
+            "text" => "Hem",
+            "url" => "",
+            "title" => "Första sidan, börja här.",
         ],
         [
-            "text" => "Frågor",
-            "url" => "questions",
-            "title" => "Frågor",
-        ],
-        [
-            "text" => "Taggar",
-            "url" => "tags",
-            "title" => "Taggar",
-        ],
-        [
-            "text" => "Alla Användare",
-            "url" => "user/users",
-            "title" => "Display all users",
-        ],
-        [
-            "text" => $loggedIn ? "Min sida" : "Logga in",
-            "url" => "user",
-            "title" => "Min sida",
-            "submenu" => $loggedIn ? [
-                "items" => [
-                    [
-                        "text" => "Logga ut",
-                        "url" => "user/logout",
-                        "title" => "Logga ut"
-                    ]
-                ]
-            ] : [
-                "items" => [
-                    [
-                        "text" => "Skapa en användare",
-                        "url" => "user/create",
-                        "title" => "Skapa en användare"
-                    ]
-                ]
-            ]
+            "text" => "Redovisning",
+            "url" => "redovisning",
+            "title" => "Redovisningstexter från kursmomenten.",
         ],
         [
             "text" => "Om",
-            "url" => "user/displayabout",
-            "title" => "Om",
+            "url" => "om",
+            "title" => "Om denna webbplats.",
+        ],
+        [
+            "text" => "Styleväljare",
+            "url" => "style",
+            "title" => "Välj stylesheet.",
+        ],
+        [
+            "text" => "Verktyg",
+            "url" => "verktyg",
+            "title" => "Verktyg och möjligheter för utveckling.",
         ],
     ],
 ];
