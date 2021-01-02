@@ -1,7 +1,7 @@
 language: php
 
 php:
-    - "7.2"
+    - "7.4"
     - hhvm
     - nightly
 
@@ -10,6 +10,10 @@ matrix:
         - php: nightly
         - php: hhvm
 
+env:
+    global:
+        - XDEBUG_MODE=coverage
+
 sudo: false
 
 git:
@@ -17,6 +21,7 @@ git:
 
 before_script:
     - make install check
+    - composer update
 
 script:
     - make test
