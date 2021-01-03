@@ -84,6 +84,8 @@ class UserLoginForm extends FormModel
             $session->set("loggedin", true);
             $session->set("UserID", $user->getUserId());
             $session->set("UserBio", $user->getUserBio());
+            $session->set("DisplayName", $user->getUserDisplayName());
+            $session->set("UserAcronym", $user->getUserAcronym());
 
             return $this->di->get("response")->redirect("user/loggedin");
         }

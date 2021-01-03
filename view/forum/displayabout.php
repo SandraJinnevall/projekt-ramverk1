@@ -33,4 +33,4 @@ Detta projekt är ett avslut för kursen ramverk1 där jag har knytit ihop säck
 
 
 <h3> Gitrepo </h3>
-<a href="https://github.com/SandraJinnevall/ramverk1-projekt.git">Här finns projeketets git-repo.</a>
+<a href="https://github.com/SandraJinnevall/projekt-ramverk1">Här finns projeketets git-repo.</a>

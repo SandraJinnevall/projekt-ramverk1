@@ -26,7 +26,7 @@ class LogoutUserForm extends FormModel
             [
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Logout",
+                    "value" => "Logga ut",
                     "callback" => [$this, "callbackSubmit"]
                 ],
             ]
