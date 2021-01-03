@@ -1,1 +1,1 @@
-Copyright 2020 Sandra Jinnevall
+2020 Sandra Jinnevall

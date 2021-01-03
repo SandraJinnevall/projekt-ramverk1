@@ -3,6 +3,7 @@
 namespace Anax\QandA\User\CrudForm;
 
 use Anax\QandA\User\User;
+use Anax\QandA\Forum\Question;
 use Anax\HTMLForm\FormModel;
 use Psr\Container\ContainerInterface;
 
@@ -65,11 +66,11 @@ class UpdateUserForm extends FormModel
                     "callback" => [$this, "callbackSubmit"]
                 ],
 
-                "button" => [
-                    "type" => "submit",
-                    "value" => "Radera mig från QandA",
-                    "callback" => [$this, "callbackSubmitDelete"]
-                ],
+                // "button" => [
+                //     "type" => "submit",
+                //     "value" => "Radera mig från QandA",
+                //     "callback" => [$this, "callbackSubmitDelete"]
+                // ],
             ]
         );
     }
@@ -116,19 +117,24 @@ class UpdateUserForm extends FormModel
         return true;
     }
 
-    public function callbackSubmitDelete()
-    {
-        $response = $this->di->get("response");
-        $session = $this->di->get("session");
-
-        $userID = $session->get("UserID");
-
-        $user = new User();
-        $user->setDb($this->di->get("dbqb"));
-        $user->find("id", $userID);
-        $user->delete();
-
-        $session->set("loggedin", false);
-        return $response->redirect("user/login");
-    }
+    // public function callbackSubmitDelete()
+    // {
+    //     $response = $this->di->get("response");
+    //     $session = $this->di->get("session");
+    //     $userID = $session->get("UserID");
+    //
+    //     $question = new Question();
+    //     $question->setDb($this->di->get("dbqb"));
+    //     $question->find("userid", $userID);
+    //     $question->delete();
+    //
+    //     $user = new User();
+    //     $user->setDb($this->di->get("dbqb"));
+    //     $user->find("id", $userID);
+    //     $user->delete();
+    //
+    //
+    //     $session->set("loggedin", false);
+    //     return $response->redirect("user/login");
+    // }
 }

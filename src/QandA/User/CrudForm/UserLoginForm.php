@@ -43,20 +43,8 @@ class UserLoginForm extends FormModel
                     "value" => "Logga in",
                     "callback" => [$this, "callbackSubmit"]
                 ],
-
-                "button" => [
-                    "type" => "submit",
-                    "value" => "Skapa användare",
-                    "callback" => [$this, "callbackCreate"]
-                ],
             ]
         );
-    }
-
-
-    public function callbackCreate()
-    {
-        return $this->di->get("response")->redirect("user/create");
     }
 
     public function callbackSubmit()
