@@ -1,6 +1,6 @@
 <?php $filter   = new \Anax\TextFilter\TextFilter(); ?>
 <?php foreach ($tags as $t) : ?>
-    <h1> Questions tagged [<?= $t->tag ?>]</h1>
+    <h1> Frågor med taggen [<?= $t->tag ?>]</h1>
 <?php endforeach; ?>
 
 <?php if ($questionWithTag) { ?>

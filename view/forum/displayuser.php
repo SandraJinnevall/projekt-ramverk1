@@ -6,7 +6,9 @@
         </div>
         <div class="user-text" style="margin-left: 18%;height: 180px;">
             <h4><?= $u->displayname ?></h4>
-            <p style="font-style: oblique;margin-top:2px;margin-bottom:2px;">Senast inloggad <?= $u->active ?></p>
+            <?php if ($u->active) { ?>
+                <p style="font-style: oblique;margin-top:2px;margin-bottom:2px;">Senast inloggad <?= $u->active ?></p>
+            <?php } ?>
             <p style="font-style: oblique;margin-top:2px;margin-bottom:2px;">Rykte [<?= $u->reputation ?>]</p>
         </div>
         <div class="right-profil">
