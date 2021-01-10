@@ -16,7 +16,7 @@
 ?>
 
 <?php if (!$questionWithTag) { ?>
-<p> There is no asked questions with this tag. </p>
+<p> Finns inga frågor med denna taggen än! </p>
     <?php
 }
 ?>

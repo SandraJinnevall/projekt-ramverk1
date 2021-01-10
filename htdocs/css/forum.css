@@ -102,6 +102,20 @@ a {
     text-decoration: underline;
 }
 
+a:hover {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #F48024;
+    text-decoration: underline;
+}
+
+a:visited {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #000;
+    text-decoration: underline;
+}
+
 .startpage-question a:visited {
     margin-bottom: 0px;
     margin-top: 0px;
@@ -5531,17 +5545,6 @@ h4:hover .header-anchor {
 .bullet-list li a:hover {
   color: #33f;
   text-decoration: underline;
-}
-a {
-  color: #33b;
-  text-decoration: underline;
-}
-a:visited {
-  color: #838;
-}
-a:hover {
-  color: #33f;
-  text-decoration: none;
 }
 .footer a {
   color: #448;

@@ -26,7 +26,7 @@
     <?php foreach ($tags as $t) : ?>
     <tr>
         <td class="startpage-question">
-            <a href="displayquestionswithtag/<?= $t->tagid ?>">(<?= $t->reputation ?>) <?= $t->tag ?></a>
+            <a href="displayquestionswithtag/<?= $t->tagid ?>"><p>(<?= $t->reputation ?>) <?= $t->tag ?></p></a>
         </td>
     </tr>
     <?php endforeach; ?>
@@ -43,7 +43,7 @@
     <?php foreach ($user as $u) : ?>
     <tr>
         <td class="startpage-question">
-            <a href="user/displayuser/<?= $u->id ?>">(<?= $u->reputation ?>) <?= $u->displayname ?></a>
+            <a href="user/displayuser/<?= $u->id ?>"><p>(<?= $u->reputation ?>) <?= $u->displayname ?></p></a>
         </td>
     </tr>
     <?php endforeach; ?>

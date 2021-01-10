@@ -77,7 +77,7 @@ class UserLoginForm extends FormModel
 
             return $this->di->get("response")->redirect("user/loggedin");
         }
-        $this->form->addOutput("Användaren finns inte");
+        $this->form->addOutput("Användaren finns inte eller står matchar inte användarnamn och lösenord");
         return false;
     }
 }

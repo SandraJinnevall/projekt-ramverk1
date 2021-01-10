@@ -12,9 +12,15 @@
     <?php
 }
 ?>
+<table>
 <?php foreach ($tags as $t) : ?>
-<p class="startpage-question"><a href="displayquestionswithtag/<?= $t->tagid ?>"><?= $t->tag ?></a><p>
+<tr>
+    <td class="startpage-question">
+        <a href="displayquestionswithtag/<?= $t->tagid ?>"><p><?= $t->tag ?></p></a>
+    </td>
+</tr>
 <?php endforeach; ?>
+</table>
 
 <?php if (!$tags) { ?>
 <p> Finns inga taggar än. </p>

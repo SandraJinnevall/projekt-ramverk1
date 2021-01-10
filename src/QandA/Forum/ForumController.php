@@ -327,9 +327,14 @@ class ForumController implements ContainerInjectableInterface
         $tagsdatabase = $this->di->get("tagsdatabase");
         $result = $tagsdatabase->checkIfExist($tag);
         if (!empty($result)) {
-            $message = "Tag already exist";
+            $message = "Taggen finns redan";
+            $page->add("forum/displaytags", [
+                "tags" => $tags,
+                "loggedin" => $session->get("loggedin"),
+                "message" => $message
+            ]);
             return $page->render([
-                "title" => "A create user page",
+                "title" => "Taggar",
             ]);
         }
 
